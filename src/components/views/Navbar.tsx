@@ -7,6 +7,7 @@ import { RxCross2 } from "react-icons/rx";
 import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 
 interface navGuard {
   label: string;
@@ -23,6 +24,7 @@ const nav: navGuard[] = [
 
 export default function Navbar() {
   let [dropDown, setDropDown] = useState(false);
+  const path = usePathname();
   return (
     <header className="text-gray-600 body-font sm:relative z-10 bg-white">
       <div className="container mx-auto flex sm:flex-wrap p-5 sm:flex-col md:flex-row items-center justify-between">
@@ -45,16 +47,16 @@ export default function Navbar() {
           />
         </Link>
         <nav
-          className={`w-11/12 h-[90%] absolute z-10 top-[109px] ${
-            dropDown ? "left-0 duration-150" : "-left-full duration-100"
-          } bg-white px-10 py-20 text-2xl text-black sm:w-fit sm:h-fit sm:relative sm:left-0 sm:top-0 sm:bg-transparent md:mr-auto md:ml-4 md:py-1 md:pl-4 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:text-base sm:justify-center list-none`}
+          className={`w-11/12 h-[100vh] absolute z-10 top-[122px] overflow-hidden ${
+            dropDown ? "left-0 duration-300" : "-left-full duration-300"
+          } bg-white px-10 py-20 text-2xl text-slate-600 sm:w-fit sm:h-fit sm:relative sm:left-0 sm:top-0 sm:bg-transparent md:mr-auto md:ml-4 md:py-1 md:pl-4 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:text-base sm:justify-center list-none`}
         >
           {nav.map((item, index) => (
             <li key={index}>
               <Link
                 href={item.href}
                 key={index}
-                className="mr-5 hover:text-gray-900 hover:underline hover:underline-offset-2"
+                className={` ${path == item.href ? " bg-b sm:underline sm:underline-offset-4 sm:text-black duration-150" : ""} mr-5 hover:text-black hover:underline hover:underline-offset-4 duration-150`}
                 onClick={() => setDropDown(!dropDown)}
               >
                 {item.label}

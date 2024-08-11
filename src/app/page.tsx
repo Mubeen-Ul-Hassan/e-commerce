@@ -1,11 +1,14 @@
+import { fetchProduct } from "@/components/utils/sanityAPI";
+import { fetchProductGuard } from "@/components/utils/types";
 import Bar from "@/components/views/Bar";
 import Card from "@/components/views/Cards";
 import Instagram from "@/components/views/Instagram";
 import LandingPage from "@/components/views/LandingPage";
-import Letter from "@/components/views/Letter";
 import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
+  let products = (await fetchProduct()) as fetchProductGuard;
+  console.log(products.result);
   return (
     <div>
       <LandingPage />
@@ -36,3 +39,5 @@ export default function Home() {
     </div>
   );
 }
+
+// 1:21:00
