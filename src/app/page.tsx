@@ -1,19 +1,18 @@
 import { fetchProduct } from "@/components/utils/sanityAPI";
 import { fetchProductGuard } from "@/components/utils/types";
 import Bar from "@/components/views/Bar";
-import Card from "@/components/views/Cards";
 import Instagram from "@/components/views/Instagram";
 import LandingPage from "@/components/views/LandingPage";
+import Grid from "@/components/views/Grid";
 import Image from "next/image";
 
 export default async function Home() {
   let products = (await fetchProduct()) as fetchProductGuard;
-  console.log(products.result);
   return (
     <div>
       <LandingPage />
       <Bar />
-      <Card />
+      <Grid productData={products.result.slice(0, 4)} />
       <section className="sm:pb-40 pb-16">
         <div className="flex flex-col sm:flex-row items-center sm:gap-10 sm:mx-60">
           <div className="sm:w-[950px] sm:h-[400px] m-4 sm:m-0">
@@ -39,5 +38,3 @@ export default async function Home() {
     </div>
   );
 }
-
-// 1:21:00

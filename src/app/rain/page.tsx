@@ -1,9 +1,12 @@
+import { fetchProduct } from "@/components/utils/sanityAPI";
+import { fetchProductGuard } from "@/components/utils/types";
 import Card from "@/components/views/Cards";
 import Filter from "@/components/views/Filter";
 import ImageContainer from "@/components/views/ImageContainer";
-import { MdKeyboardArrowDown } from "react-icons/md";
 
-export default function Rain() {
+export default async function Rain() {
+  let products = (await fetchProduct()) as fetchProductGuard;
+
   return (
     <div>
       <ImageContainer
@@ -11,8 +14,8 @@ export default function Rain() {
         text={"Waterproof. City Essential. Unisex."}
         subtext="The Anyday Rain Boot™"
       />
-      <Filter />
-      <Card />
+      <Filter totalProduct={9} />
+      <Card productData={products.result.slice(0, 6)} />
     </div>
   );
 }

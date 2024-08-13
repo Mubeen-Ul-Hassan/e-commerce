@@ -1,7 +1,7 @@
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 import { MdKeyboardArrowDown } from "react-icons/md";
 
-export default function Filter() {
+export default function Filter({ totalProduct }: { totalProduct: number }) {
   return (
     <section className="w-full flex flex-wrap justify-between items-center px-5 sm:px-64 py-5 sm:pt-20 text-gray-500 sm:text-black">
       <div className="hidden sm:flex gap-4">
@@ -27,7 +27,7 @@ export default function Filter() {
           <HiAdjustmentsHorizontal className="text-xl" />
           <h1>Filter and sort</h1>
         </div>
-        <h1>5 products</h1>
+        <h1>{totalProduct} products</h1>
       </div>
     </section>
   );

@@ -1,8 +1,11 @@
+import { fetchProduct } from "@/components/utils/sanityAPI";
+import { fetchProductGuard } from "@/components/utils/types";
 import Card from "@/components/views/Cards";
 import Filter from "@/components/views/Filter";
 import Image from "next/image";
 
-export default function New() {
+export default async function New() {
+  let products = (await fetchProduct()) as fetchProductGuard;
   return (
     <div>
       <section>
@@ -24,8 +27,8 @@ export default function New() {
           </div>
         </div>
       </section>
-      <Filter />
-      <Card />
+      <Filter totalProduct={8} />
+      <Card productData={products.result.slice(0, 8)} />
     </div>
   );
 }

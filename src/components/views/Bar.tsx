@@ -12,7 +12,7 @@ export default function Bar() {
         </h3>
       </div>
 
-      <div className="w-full h-96 flex flex-col items-center justify-center gap-5 sm:gap-0 text-black">
+      <div className="w-full h-96 flex flex-col items-center justify-center gap-5 sm:gap-0 text-black bg-customGray">
         <h1 className="font-semibold text-5xl sm:text-6xl text-center">
           30% Off Site Wide
         </h1>

@@ -1,0 +1,32 @@
+.container {
+  background-color: white;
+}
+
+.container:hover .image {
+  transform: scale(1.05);
+  transition: transform 0.5s;
+}
+.arrow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid black;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  transform: translateY(-50%);
+  transform-origin: left;
+}
+
+.container:hover .arrow {
+  transform: scaleX(1.2); /* Stretch horizontally */
+  transform-origin: left; /* Keep the left side fixed */
+  transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.container:hover .image,
+.container:hover .arrow {
+  transition-timing-function: ease-in-out;
+}
