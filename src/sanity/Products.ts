@@ -1,4 +1,4 @@
-export default {
+const Products = {
   name: "products",
   type: "document",
   title: "Products",
@@ -68,3 +68,5 @@ export default {
     },
   ],
 };
+
+export default Products;
