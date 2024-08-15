@@ -47,7 +47,7 @@ export default function Navbar() {
           />
         </Link>
         <nav
-          className={`w-11/12 h-[100vh] absolute z-10 top-[122px] overflow-hidden ${
+          className={`w-11/12 h-[100vh] absolute z-10 top-[110px] overflow-hidden ${
             dropDown ? "left-0 duration-300" : "-left-full duration-300"
           } bg-white px-10 py-20 text-2xl text-slate-600 sm:w-fit sm:h-fit sm:relative sm:left-0 sm:top-0 sm:bg-transparent md:mr-auto md:ml-4 md:py-1 md:pl-4 flex flex-col gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:text-base sm:justify-center list-none`}
         >
