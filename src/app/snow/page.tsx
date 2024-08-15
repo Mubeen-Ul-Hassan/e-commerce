@@ -11,8 +11,8 @@ export default async function Snow() {
       <div className="mx-5 sm:mx-60 mt-7 sm:mt-10">
         <h1 className="text-5xl font-semibold text-customGreen">Snow</h1>
       </div>
-      <Filter totalProduct={7} />
-      <Card productData={products.result.slice(0, 7)} />
+      <Filter totalProduct={9} />
+      <Card productData={products.result.slice(0, 9)} />
     </div>
   );
 }

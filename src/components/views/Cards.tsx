@@ -11,9 +11,9 @@ export default async function Card({
   productData: resultGuard[];
 }) {
   return (
-    <section className="text-black mb-20">
+    <section className="text-black mb-20 min-h-0 flex flex-col overflow-visible">
       <div className="sm:container sm:px-5 sm:py-16 sm:mx-auto">
-        <div className="flex justify-start items-center flex-wrap gap-2 sm:gap-0 sm:-m-4">
+        <div className="flex justify-start items-center flex-wrap gap-2 sm:gap-0 min-h-0">
           {productData.map((item, index) => (
             <div
               className="lg:w-1/4 md:w-1/2 sm:p-4 w-[45%] sm:hover:scale-105 sm:hover:drop-shadow-md sm:hover:duration-100 drop-shadow-md"

@@ -14,8 +14,8 @@ export default async function Rain() {
         text={"Waterproof. City Essential. Unisex."}
         subtext="The Anyday Rain Boot™"
       />
-      <Filter totalProduct={9} />
-      <Card productData={products.result.slice(0, 6)} />
+      <Filter totalProduct={6} />
+      <Card productData={products.result.slice(3, 9)} />
     </div>
   );
 }

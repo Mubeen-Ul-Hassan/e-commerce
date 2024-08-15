@@ -14,8 +14,8 @@ export default async function Thesus() {
         text={"Versatile. Sustainable. Oh So Comfy!"}
         subtext="The Weekend Boot™"
       />
-      <Filter totalProduct={12} />
-      <Card productData={products.result} />
+      <Filter totalProduct={16} />
+      <Card productData={products.result.slice(0, 16)} />
     </div>
   );
 }

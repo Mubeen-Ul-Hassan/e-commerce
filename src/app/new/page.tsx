@@ -27,8 +27,8 @@ export default async function New() {
           </div>
         </div>
       </section>
-      <Filter totalProduct={8} />
-      <Card productData={products.result.slice(0, 8)} />
+      <Filter totalProduct={7} />
+      <Card productData={products.result.slice(0, 7)} />
     </div>
   );
 }
