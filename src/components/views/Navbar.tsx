@@ -56,7 +56,7 @@ export default function Navbar() {
               <Link
                 href={item.href}
                 key={index}
-                className={` ${path == item.href ? " bg-b sm:underline sm:underline-offset-4 sm:text-black duration-150" : ""} mr-5 hover:text-black hover:underline hover:underline-offset-4 duration-150`}
+                className={` ${path == item.href ? " bg-b sm:underline sm:underline-offset-4 sm:text-black duration-150" : ""} mr-5 hover:text-black hover:underline hover:underline-offset-4 transition-all ease-in-out duration-150`}
                 onClick={() => setDropDown(!dropDown)}
               >
                 {item.label}
