@@ -1,10 +1,10 @@
 import { urlFor } from "@/sanity/lib/image";
 import Image from "next/image";
-import { resultGuard } from "../utils/types";
+import { Image as Image_2 } from "sanity";
 
 interface galleryGuard {
-  imageURL: resultGuard[];
-  productPrice: string;
+  imageURL: Image_2[] | [];
+  productPrice: string | number;
   productDescription: string;
 }
 
@@ -17,16 +17,19 @@ export default function Gallery({
     <section className="w-full px-56 my-8">
       <div className="w-full flex">
         <div className="flex flex-wrap gap-2 w-[75%]">
-          {imageURL?.map((image, id) => (
+          {/* Product image */}
+          {imageURL.map((image, id) => (
             <Image
               src={urlFor(image).url()}
               width={450}
               height={450}
               alt="Shoes"
               key={id}
+              className="w-[200px] h-[200px] sm:w-[450px] sm:h-[450px]"
             />
           ))}
         </div>
+        {/* Product Detail Section */}
         <div className="w-[40%] pl-6">
           <h5 className="text-gray-600 uppercase text-sm">Thesus</h5>
           <h1 className="text-5xl font-medium">Anyday Rain Boot In Black</h1>
@@ -56,7 +59,7 @@ export default function Gallery({
               Add to cart
             </button>
           </div>
-          {/* Product descriptio */}
+          {/* Product description */}
           <p className="my-20 leading-7 text-lg text-gray-600">
             {productDescription}
           </p>
@@ -65,3 +68,5 @@ export default function Gallery({
     </section>
   );
 }
+
+// Create a new feature branch. Test your coursel on that.

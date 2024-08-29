@@ -3,8 +3,7 @@ import { fetchCurrentProductDetails } from "@/components/utils/sanityAPI";
 import { resultGuard } from "@/components/utils/types";
 import Gallery from "@/components/views/Gallery";
 import { useParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
-import { TbListDetails } from "react-icons/tb";
+import { useEffect, useState } from "react";
 
 export default function Brief() {
   const params = useParams();
@@ -18,15 +17,17 @@ export default function Brief() {
     );
   }, [product]);
 
-  console.log(details);
-
   return (
     <section>
       <div>
         <Gallery
-          imageURL={details?.image}
-          productPrice={details?.price}
-          productDescription={details?.description[0].children[0].text}
+          imageURL={details?.image !== undefined ? details.image : []}
+          productPrice={details?.price !== undefined ? details.price : " "}
+          productDescription={
+            details?.description[0].children[0].text !== undefined
+              ? details.description[0].children[0].text
+              : ""
+          }
         />
       </div>
     </section>
