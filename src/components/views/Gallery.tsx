@@ -3,22 +3,24 @@ import Image from "next/image";
 import { Image as Image_2 } from "sanity";
 
 interface galleryGuard {
-  imageURL: Image_2[] | [];
-  productPrice: string | number;
+  imageURL: Image_2[];
+  productPrice: number;
   productDescription: string;
+  productName: string;
 }
 
 export default function Gallery({
   imageURL,
   productPrice,
   productDescription,
+  productName,
 }: galleryGuard) {
   return (
     <section className="w-full px-56 my-8">
       <div className="w-full flex">
         <div className="flex flex-wrap gap-2 w-[75%]">
           {/* Product image */}
-          {imageURL.map((image, id) => (
+          {imageURL?.map((image, id) => (
             <Image
               src={urlFor(image).url()}
               width={450}
@@ -32,7 +34,7 @@ export default function Gallery({
         {/* Product Detail Section */}
         <div className="w-[40%] pl-6">
           <h5 className="text-gray-600 uppercase text-sm">Thesus</h5>
-          <h1 className="text-5xl font-medium">Anyday Rain Boot In Black</h1>
+          <h1 className="text-5xl font-medium">{productName}</h1>
           <h1 className="text-2xl pt-6 pb-1 tracking-widest font-normal">
             Rs.{productPrice} PKR
           </h1>

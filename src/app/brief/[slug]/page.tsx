@@ -1,34 +1,29 @@
 "use client";
-import { fetchCurrentProductDetails } from "@/components/utils/sanityAPI";
-import { resultGuard } from "@/components/utils/types";
+import useProductInfo from "@/components/hooks/useProductInfo";
 import Gallery from "@/components/views/Gallery";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
 export default function Brief() {
   const params = useParams();
-  const [details, setDetails] = useState<resultGuard>();
 
   const product = params.slug as string;
+  const [info] = useProductInfo(product);
 
-  useEffect(() => {
-    fetchCurrentProductDetails(product).then((fetchedData) =>
-      setDetails(fetchedData.result[0])
-    );
-  }, [product]);
+  console.log(info);
 
   return (
     <section>
       <div>
-        <Gallery
-          imageURL={details?.image !== undefined ? details.image : []}
-          productPrice={details?.price !== undefined ? details.price : " "}
-          productDescription={
-            details?.description[0].children[0].text !== undefined
-              ? details.description[0].children[0].text
-              : ""
-          }
-        />
+        {info !== undefined ? (
+          <Gallery
+            imageURL={info.image}
+            productPrice={info.price}
+            productDescription={info.description[0].children[0].text}
+            productName={info.productname}
+          />
+        ) : (
+          <div className="text-center my-5 text-2xl">Loading</div>
+        )}
       </div>
     </section>
   );

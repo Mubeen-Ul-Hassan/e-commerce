@@ -7,7 +7,6 @@ import Link from "next/link";
 import React, { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "@/components/views/home.module.css";
-/* {item.description[0].children[0].text} */
 
 interface CardProps {
   productData: resultGuard[];
