@@ -9,8 +9,6 @@ export default function Brief() {
   const product = params.slug as string;
   const [info] = useProductInfo(product);
 
-  console.log(info);
-
   return (
     <section>
       <div>
