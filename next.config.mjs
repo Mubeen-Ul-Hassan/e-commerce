@@ -14,20 +14,20 @@ const nextConfig = {
     return [
       {
         // Routes this applies to
-        source: "/brief/(.*)",
+        source: "/brief/*",
         // Headers
         headers: [
           // Allow for specific domains to have access or * for all
           {
             key: "Access-Control-Allow-Origin",
-            value: "cdn.sanity.io",
+            value: "api.sanity.io",
             // DOES NOT WORK
             // value: process.env.ALLOWED_ORIGIN,
           },
           // Allows for specific methods accepted
           {
             key: "Access-Control-Allow-Methods",
-            value: "GET, POST, PUT, DELETE, OPTIONS",
+            value: "GET",
           },
           // Allows for specific headers accepted (These are a few standard ones)
           {
