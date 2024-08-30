@@ -2,6 +2,7 @@
 import useProductInfo from "@/components/hooks/useProductInfo";
 import Gallery from "@/components/views/Gallery";
 import { useParams } from "next/navigation";
+import Hashloader from "react-spinners/HashLoader";
 
 export default function Brief() {
   const params = useParams();
@@ -20,7 +21,9 @@ export default function Brief() {
             productName={info.productname}
           />
         ) : (
-          <div className="text-center my-5 text-2xl">Loading</div>
+          <div className="h-[600px] flex justify-center items-center">
+            <Hashloader color="#123026" size={70} />
+          </div>
         )}
       </div>
     </section>
