@@ -11,7 +11,7 @@ export default function Letter() {
             placeholder="Your e-mail"
             className="border rounded border-black py-1.5 pl-4 w-[60%] sm:w-full"
           />
-          <button className="bg-customGreen font-medium sm:font-semibold text-white px-4 py-2 rounded-md sm:w-1/3">
+          <button className="bg-customGreen font-medium sm:font-semibold text-white px-4 py-2 rounded-md sm:w-5/12">
             Sign Up
           </button>
         </div>
