@@ -14,7 +14,7 @@ const nextConfig = {
     return [
       {
         // Routes this applies to
-        source: "/brief/*",
+        source: "/brief/(.*)",
         // Headers
         headers: [
           // Allow for specific domains to have access or * for all
